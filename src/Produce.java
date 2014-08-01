@@ -5,6 +5,8 @@
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.rmi.CORBA.Tie;
 import java.util.Date;
@@ -17,10 +19,11 @@ import java.util.concurrent.TimeUnit;
 public class Produce {
 
     private static final Integer CONVERT_TO_MINUTES = 60000;
+    private static final Logger log = LoggerFactory.getLogger(Produce.class);
 
     public static void main(String[] args) {
 
-        long time = Long.parseLong(args[0]);
+        long time = 1;
         Random rnd = new Random();
 
         Properties props = new Properties();
@@ -40,12 +43,14 @@ public class Produce {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
             try {
-                Thread.sleep(1000 / 500);
+                Thread.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            long runtime = new Date().getTime();
-            String msg = runtime + ";" + value;
+            Date runtime = new GregorianCalendar().getTime();
+            String msg = runtime.toString() + ";" + value;
+
+            log.info(value);
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
             producer.send(data);
             producer.close();
