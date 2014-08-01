@@ -6,16 +6,21 @@ import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
 
+import javax.rmi.CORBA.Tie;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 
 public class Produce {
 
+    private static final Integer CONVERT_TO_MINUTES = 60000;
+
     public static void main(String[] args) {
 
-        long messagesPerSecond = Long.parseLong(args[0]);
+        long time = Long.parseLong(args[0]);
         Random rnd = new Random();
 
         Properties props = new Properties();
@@ -28,7 +33,10 @@ public class Produce {
 
         Producer<String, String> producer = new Producer<String, String>(config);
 
-        for (long nEvents = 0; nEvents < messagesPerSecond; nEvents++) {
+        Date start = new GregorianCalendar().getTime();
+        Date current = new GregorianCalendar().getTime();
+
+        while(current.getTime() - start.getTime() < time * CONVERT_TO_MINUTES) {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
             try {
@@ -40,7 +48,7 @@ public class Produce {
             String msg = runtime + ";" + value;
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
             producer.send(data);
+            producer.close();
         }
-        producer.close();
     }
 }
