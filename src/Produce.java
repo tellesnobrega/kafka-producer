@@ -18,12 +18,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Produce {
 
-    private static final Integer CONVERT_TO_MINUTES = 60000;
     private static final Logger log = LoggerFactory.getLogger(Produce.class);
 
     public static void main(String[] args) {
 
-        long time = 1;
+        long time = Long.parseLong(args[0]);
         Random rnd = new Random();
 
         Properties props = new Properties();
@@ -39,7 +38,7 @@ public class Produce {
         Date start = new GregorianCalendar().getTime();
         Date current = new GregorianCalendar().getTime();
 
-        while(current.getTime() - start.getTime() < time * CONVERT_TO_MINUTES) {
+        while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMinutes(time)) {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
             try {
