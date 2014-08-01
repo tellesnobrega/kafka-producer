@@ -43,14 +43,15 @@ public class Produce {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
             try {
-                Thread.sleep(2);
+                TimeUnit.MILLISECONDS.sleep(1);
+                TimeUnit.MICROSECONDS.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             Date runtime = new GregorianCalendar().getTime();
             String msg = runtime.toString() + ";" + value;
 
-            log.info(value);
+            System.out.println(msg);
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
             producer.send(data);
             producer.close();
