@@ -38,7 +38,7 @@ public class Produce {
         Date start = new GregorianCalendar().getTime();
         Date current = new GregorianCalendar().getTime();
 
-        while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMinutes(time)) {
+        while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMillis(time)) {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
             try {
@@ -52,8 +52,8 @@ public class Produce {
 
             System.out.println(msg);
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
-            producer.send(data);
-            producer.close();
+//            producer.send(data);
+//            producer.close();
         }
     }
 }
