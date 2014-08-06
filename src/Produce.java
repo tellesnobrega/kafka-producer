@@ -38,7 +38,7 @@ public class Produce {
         Date start = new GregorianCalendar().getTime();
         Date current = new GregorianCalendar().getTime();
 
-        while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMinutes(time)) {
+        while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMillis(time)) {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
             try {
