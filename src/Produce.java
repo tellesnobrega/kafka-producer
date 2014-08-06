@@ -53,7 +53,7 @@ public class Produce {
             System.out.println(msg);
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
 //            producer.send(data);
-//            producer.close();
         }
+//        producer.close();
     }
 }
