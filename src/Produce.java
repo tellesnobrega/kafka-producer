@@ -23,6 +23,7 @@ public class Produce {
     public static void main(String[] args) {
 
         long time = Long.parseLong(args[0]);
+	System.out.println(time);
         Random rnd = new Random();
 
         Properties props = new Properties();
@@ -33,10 +34,12 @@ public class Produce {
 
         ProducerConfig config = new ProducerConfig(props);
 
-        Producer<String, String> producer = new Producer<String, String>(config);
+        Producer<Integer, Integer> producer = new Producer<Integer, Integer>(config);
 
         Date start = new GregorianCalendar().getTime();
         Date current = new GregorianCalendar().getTime();
+
+	System.out.println(TimeUnit.MINUTES.toMillis(time));
 
         while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMillis(time)) {
             Integer key = rnd.nextInt(10);
@@ -50,10 +53,10 @@ public class Produce {
             Date runtime = new GregorianCalendar().getTime();
             String msg = runtime.toString() + ";" + value;
 
-            System.out.println(msg);
-            KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
+            KeyedMessage<Integer, Integer> data = new KeyedMessage<Integer, Integer>("consumptions", key, value);
             producer.send(data);
-            producer.close();
+            current = new GregorianCalendar().getTime();
         }
+        producer.close();
     }
 }
