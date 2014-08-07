@@ -27,7 +27,7 @@ public class Produce {
         Random rnd = new Random();
 
         Properties props = new Properties();
-        props.put("metadata.broker.list", "localhost:9092");
+        props.put("metadata.broker.list", "telles-samza-master:9092");
         props.put("serializer.class", "kafka.serializer.StringEncoder");
         props.put("partitioner.class", "SimplePartitioner");
         props.put("request.required.acks", "1");
@@ -48,8 +48,9 @@ public class Produce {
                 e.printStackTrace();
             }
             Date runtime = new GregorianCalendar().getTime();
+            String msg = runtime.toString() + ";" + value;
 
-            KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),String.valueOf(value));
+            KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),msg);
             producer.send(data);
             current = new GregorianCalendar().getTime();
         }
