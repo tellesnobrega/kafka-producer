@@ -44,13 +44,12 @@ public class Produce {
             Integer value = rnd.nextInt(100);
             try {
                 TimeUnit.MILLISECONDS.sleep(1);
-                TimeUnit.MICROSECONDS.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             Date runtime = new GregorianCalendar().getTime();
 
-            KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key),String.valueOf(value));
+            KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),String.valueOf(value));
             producer.send(data);
             current = new GregorianCalendar().getTime();
         }
