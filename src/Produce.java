@@ -9,11 +9,6 @@ import kafka.producer.ProducerConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import alarm.Event;
-import alarm.Type;
-
-import javax.rmi.CORBA.Tie;
-
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Map;
@@ -39,7 +34,7 @@ public class Produce {
 
         ProducerConfig config = new ProducerConfig(props);
 
-        Producer<String, String> producer = new Producer<String, String>(config);
+        Producer<String,String> producer = new Producer<String, String>(config);
 
         Date start = new GregorianCalendar().getTime();
         Date current = new GregorianCalendar().getTime();
@@ -54,14 +49,11 @@ public class Produce {
                 e.printStackTrace();
             }
             Date runtime = new GregorianCalendar().getTime();
-            String msg = runtime.toString() + ";" + value;
-            Event event = new Event(Type.CONSUMPTION, key, value);
-    		Map<String, Object> outgoingMap = Event.toMap(event);
 
-            System.out.println(msg);
-            KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
-            producer.send(outgoingMap);
+            KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key),String.valueOf(value));
+            producer.send(data);
+            current = new GregorianCalendar().getTime();
         }
-//        producer.close();
+        producer.close();
     }
 }
