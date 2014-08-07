@@ -5,12 +5,18 @@
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import alarm.Event;
+import alarm.Type;
+
 import javax.rmi.CORBA.Tie;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -49,10 +55,12 @@ public class Produce {
             }
             Date runtime = new GregorianCalendar().getTime();
             String msg = runtime.toString() + ";" + value;
+            Event event = new Event(Type.CONSUMPTION, key, value);
+    		Map<String, Object> outgoingMap = Event.toMap(event);
 
             System.out.println(msg);
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("consumptions", String.valueOf(key), msg);
-//            producer.send(data);
+            producer.send(outgoingMap);
         }
 //        producer.close();
     }
