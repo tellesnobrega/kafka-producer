@@ -42,15 +42,12 @@ public class Produce {
         while(current.getTime() - start.getTime() < TimeUnit.MINUTES.toMillis(time)) {
             Integer key = rnd.nextInt(10);
             Integer value = rnd.nextInt(100);
-            try {
-                TimeUnit.MILLISECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             Date runtime = new GregorianCalendar().getTime();
             String msg = runtime.toString() + ";" + value;
 
+            log.info("Sent");
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),msg);
+            //KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),String.valueOf(value));
             producer.send(data);
             current = new GregorianCalendar().getTime();
         }
