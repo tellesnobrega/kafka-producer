@@ -51,6 +51,7 @@ public class Produce {
             String msg = runtime.toString() + ";" + value;
 
             KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),msg);
+            //KeyedMessage<String, String> data = new KeyedMessage<String, String>("inputs", String.valueOf(key),String.valueOf(value));
             producer.send(data);
             current = new GregorianCalendar().getTime();
         }
