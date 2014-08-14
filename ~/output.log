@@ -1,0 +1,112 @@
+14:02:44:827;Verifying properties
+14:02:44:847;Property metadata.broker.list is overridden to telles-samza-master:9092
+14:02:44:847;Property partitioner.class is overridden to SimplePartitioner
+14:02:44:848;Property request.required.acks is overridden to 1
+14:02:44:848;Property serializer.class is overridden to kafka.serializer.StringEncoder
+14:02:44:877;Sent
+14:02:44:919;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 0 for 1 topic(s) Set(inputs)
+14:02:44:931;Connected to telles-samza-master:9092 for producing
+14:02:44:956;Disconnecting from telles-samza-master:9092
+14:02:44:964;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:02:44:981;Connected to telles-samza-slave2:9092 for producing
+14:02:44:992;Sent
+14:02:44:994;Failed to send data since partitions [inputs,0] don't have a leader
+14:02:44:997;Back off for 100 ms before retrying send. Remaining retries = 3
+14:02:45:098;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 4 for 1 topic(s) Set(inputs)
+14:02:45:099;Connected to telles-samza-master:9092 for producing
+14:02:45:102;Disconnecting from telles-samza-master:9092
+14:02:45:103;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:02:45:103;Disconnecting from telles-samza-slave2:9092
+14:02:45:103;Failed to send data since partitions [inputs,0] don't have a leader
+14:02:45:103;Back off for 100 ms before retrying send. Remaining retries = 2
+14:02:45:204;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 6 for 1 topic(s) Set(inputs)
+14:02:45:206;Connected to telles-samza-master:9092 for producing
+14:02:45:209;Disconnecting from telles-samza-master:9092
+14:02:45:210;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:02:45:211;Failed to send data since partitions [inputs,0] don't have a leader
+14:02:45:211;Back off for 100 ms before retrying send. Remaining retries = 1
+14:02:45:312;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 8 for 1 topic(s) Set(inputs)
+14:02:45:314;Connected to telles-samza-master:9092 for producing
+14:02:45:317;Disconnecting from telles-samza-master:9092
+14:02:45:318;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:02:45:319;Failed to send data since partitions [inputs,0] don't have a leader
+14:02:45:319;Back off for 100 ms before retrying send. Remaining retries = 0
+14:02:45:420;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 10 for 1 topic(s) Set(inputs)
+14:02:45:422;Connected to telles-samza-master:9092 for producing
+14:02:45:425;Disconnecting from telles-samza-master:9092
+14:02:45:426;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:02:45:428;Failed to send requests for topics inputs with correlation ids in [3,10]
+14:03:55:649;Verifying properties
+14:03:55:669;Property metadata.broker.list is overridden to telles-samza-master:9092
+14:03:55:670;Property partitioner.class is overridden to SimplePartitioner
+14:03:55:670;Property request.required.acks is overridden to 1
+14:03:55:670;Property serializer.class is overridden to kafka.serializer.StringEncoder
+14:03:55:699;Sent
+14:03:55:735;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 0 for 1 topic(s) Set(inputs)
+14:03:55:747;Connected to telles-samza-master:9092 for producing
+14:03:55:773;Disconnecting from telles-samza-master:9092
+14:03:55:782;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:03:55:792;Failed to send data since partitions [inputs,0] don't have a leader
+14:03:55:794;Back off for 100 ms before retrying send. Remaining retries = 3
+14:03:55:895;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 2 for 1 topic(s) Set(inputs)
+14:03:55:897;Connected to telles-samza-master:9092 for producing
+14:03:55:901;Disconnecting from telles-samza-master:9092
+14:03:55:902;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:03:55:904;Failed to send data since partitions [inputs,0] don't have a leader
+14:03:55:904;Back off for 100 ms before retrying send. Remaining retries = 2
+14:03:56:005;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 4 for 1 topic(s) Set(inputs)
+14:03:56:007;Connected to telles-samza-master:9092 for producing
+14:03:56:010;Disconnecting from telles-samza-master:9092
+14:03:56:010;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:03:56:012;Failed to send data since partitions [inputs,0] don't have a leader
+14:03:56:012;Back off for 100 ms before retrying send. Remaining retries = 1
+14:03:56:113;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 6 for 1 topic(s) Set(inputs)
+14:03:56:115;Connected to telles-samza-master:9092 for producing
+14:03:56:118;Disconnecting from telles-samza-master:9092
+14:03:56:119;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:03:56:120;Failed to send data since partitions [inputs,0] don't have a leader
+14:03:56:121;Back off for 100 ms before retrying send. Remaining retries = 0
+14:03:56:222;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 8 for 1 topic(s) Set(inputs)
+14:03:56:223;Connected to telles-samza-master:9092 for producing
+14:03:56:227;Disconnecting from telles-samza-master:9092
+14:03:56:228;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:03:56:230;Failed to send requests for topics inputs with correlation ids in [0,8]
+14:07:30:286;Verifying properties
+14:07:30:306;Property metadata.broker.list is overridden to telles-samza-master:9092
+14:07:30:307;Property partitioner.class is overridden to SimplePartitioner
+14:07:30:307;Property request.required.acks is overridden to 1
+14:07:30:307;Property serializer.class is overridden to kafka.serializer.StringEncoder
+14:07:30:336;Sent
+14:07:30:372;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 0 for 1 topic(s) Set(inputs)
+14:07:30:382;Connected to telles-samza-master:9092 for producing
+14:07:30:405;Disconnecting from telles-samza-master:9092
+14:07:30:413;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:07:30:430;Connected to telles-samza-slave2:9092 for producing
+14:07:30:439;Sent
+14:07:30:441;Sent
+14:07:30:444;Failed to send data since partitions [inputs,0] don't have a leader
+14:07:30:447;Back off for 100 ms before retrying send. Remaining retries = 3
+14:07:30:549;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 6 for 1 topic(s) Set(inputs)
+14:07:30:551;Connected to telles-samza-master:9092 for producing
+14:07:30:554;Disconnecting from telles-samza-master:9092
+14:07:30:555;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:07:30:555;Disconnecting from telles-samza-slave2:9092
+14:07:30:556;Failed to send data since partitions [inputs,0] don't have a leader
+14:07:30:557;Back off for 100 ms before retrying send. Remaining retries = 2
+14:07:30:658;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 8 for 1 topic(s) Set(inputs)
+14:07:30:660;Connected to telles-samza-master:9092 for producing
+14:07:30:663;Disconnecting from telles-samza-master:9092
+14:07:30:664;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:07:30:665;Failed to send data since partitions [inputs,0] don't have a leader
+14:07:30:665;Back off for 100 ms before retrying send. Remaining retries = 1
+14:07:30:766;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 10 for 1 topic(s) Set(inputs)
+14:07:30:768;Connected to telles-samza-master:9092 for producing
+14:07:30:772;Disconnecting from telles-samza-master:9092
+14:07:30:773;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:07:30:774;Failed to send data since partitions [inputs,0] don't have a leader
+14:07:30:774;Back off for 100 ms before retrying send. Remaining retries = 0
+14:07:30:875;Fetching metadata from broker id:0,host:telles-samza-master,port:9092 with correlation id 12 for 1 topic(s) Set(inputs)
+14:07:30:877;Connected to telles-samza-master:9092 for producing
+14:07:30:880;Disconnecting from telles-samza-master:9092
+14:07:30:881;Error while fetching metadata 	partition 0	leader: none	replicas: 1 (telles-samza-slave1:9092)	isr: 	isUnderReplicated: true for topic partition [inputs,0]: [class kafka.common.LeaderNotAvailableException]
+14:07:30:884;Failed to send requests for topics inputs with correlation ids in [5,12]
